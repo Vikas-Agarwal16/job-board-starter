@@ -1,0 +1,201 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job board</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f6f7f9;
+        color: #202124;
+      }
+
+      main {
+        max-width: 850px;
+        margin: 48px auto;
+        padding: 0 20px;
+      }
+
+      header {
+        margin-bottom: 32px;
+      }
+
+      h1 {
+        font-size: 30px;
+        letter-spacing: -0.8px;
+        margin: 0;
+      }
+
+      header p {
+        color: #6b7280;
+        margin: 8px 0 0;
+      }
+
+      section {
+        margin-bottom: 40px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin: 0 0 16px;
+        letter-spacing: -0.3px;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px 14px;
+        font: inherit;
+        background: #fff;
+        border: 1px solid #d9dde4;
+        border-radius: 8px;
+        outline: none;
+        margin-bottom: 16px;
+        transition: border-color 0.15s;
+      }
+
+      input:focus {
+        border-color: #6366a8;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        background: #fff;
+        border: 1px solid #e1e4e8;
+        border-radius: 10px;
+        padding: 18px 20px;
+        margin-bottom: 12px;
+        transition: border-color 0.15s, box-shadow 0.15s;
+      }
+
+      li:hover {
+        border-color: #cbd0d9;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      }
+
+      li p {
+        margin: 0;
+        line-height: 1.6;
+        color: #424650;
+      }
+
+      button {
+        font: inherit;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 9px 15px;
+        border: 1px solid #d8daf2;
+        border-radius: 7px;
+        color: #4149a6;
+        background: #f7f7ff;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: background 0.15s, border-color 0.15s;
+      }
+
+      button:hover {
+        background: #ececff;
+        border-color: #c5c8eb;
+      }
+
+      button:disabled {
+        opacity: 0.65;
+        cursor: default;
+      }
+
+      #saved-jobs {
+        border-top: 1px solid #e1e4e8;
+        padding-top: 24px;
+      }
+
+      #saved-jobs li button {
+        color: #b33b45;
+        border-color: #f0d4d6;
+        background: #fff7f7;
+      }
+
+      #saved-jobs li button:hover {
+        background: #ffeded;
+      }
+
+      .empty {
+        display: block;
+        color: #777;
+        padding: 16px 20px;
+        background: transparent;
+        border: 1px dashed #d6d9df;
+      }
+
+      @media (max-width: 600px) {
+        main {
+          margin: 28px auto;
+          padding: 0 16px;
+        }
+
+        h1 {
+          font-size: 26px;
+        }
+
+        li {
+          padding: 15px;
+          gap: 12px;
+        }
+
+        button {
+          padding: 8px 11px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        li {
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <h1>Job board</h1>
+        <p>Find opportunities and keep track of the ones you like.</p>
+      </header>
+
+      <section>
+        <h2>Available jobs</h2>
+
+        <input
+          id="search"
+          type="search"
+          placeholder="Search by title, company or place"
+          aria-label="Search jobs"
+        />
+
+        <ul id="jobs"></ul>
+      </section>
+
+      <section>
+        <h2>Saved jobs</h2>
+        <ul id="saved-jobs"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
